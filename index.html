@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reddit</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/modal.css" />
     <script src="src/main.js" defer></script>
     <script src="src/modals.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,58 +16,69 @@
 </head>
 
 <body>
-    <div id="input">
-        <div id="searchBoxSpan">
-            <input type="text" oninput="searchInput()" id="subreddit" placeholder="Enter Subreddit">
-            <button id="fetch">
-                <i class="searchButtonIcon fa-solid fa-search"></i>
-            </button>
+    <div id="page-wrap">
+        <div id="input">
+            <div id="searchBoxSpan">
+                <input type="text" oninput="searchInput()" id="subreddit" placeholder="Enter Subreddit">
+                <button id="fetch">
+                    <i class="searchButtonIcon fa-solid fa-search"></i>
+                </button>
+                
+                <button id="fetch-user">
+                    <i class="searchButtonIcon downATinyBit fa-solid fa-search"></i>
+                    <i class="searchButtonIcon upABit fa-solid fa-user"></i>
+                </button>
+                <button id="filters">
+                    <i class="searchButtonIcon fa-solid fa-bars"></i>
+                </button>
+            </div>
+            <div>
+                <button id="fetch-random">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </button>
+            </div>
+            <div id="searchOptions">
+                <!-- <label for="isUser">Search Users</label>
+                <input type="checkbox" id="isUser" title="Is User?" /> -->
+    
+                <label for="autoscroll">Autoscroll</label>
+                <input type="checkbox" id="autoscroll" title="Auto-scroll?" />
+    
+                <label for="nsfw" id="nsfw-label">NSFW</label>
+                <input type="checkbox" id="nsfw" title="NSFW?" />
+    
+                <dialog id="filtersmodal">
+                    <div>
+                        <div class="modal-title">Filters & Config</div>
+                    </div>
+                    <div class="filters">
+                        <div class="filter-section">
+                            <textarea class="filters-textarea" id="subreddit-filter" cols="30" rows="10" placeholder="Subreddits to blocklist..."></textarea>
+                            <input class="filters-checkbox" id="subreddit-filter-checkbox" type="checkbox" checked>
+                        </div>
+                        <div class="filter-section">
+                            <textarea class="filters-textarea" id="subreddit-content-filter" cols="30" rows="10" placeholder="Words in subs to blocklist..."></textarea>
+                            <input class="filters-checkbox" id="subreddit-content-filter-checkbox" type="checkbox" checked>
+                        </div>
+                    </div>
+                    <div>
+                        <button autofocus id="filtersmodalclose">Back</button>
+                    </div>
+                </dialog>
+    
+                <!-- button for saved -->
+                <button id="saved">
+                    Open Saved <i class="searchButtonIcon fa-solid fa-bookmark"></i>
+                </button>
+    
+            </div>
             
-            <button id="fetch-user">
-                <i class="searchButtonIcon downATinyBit fa-solid fa-search"></i>
-                <i class="searchButtonIcon upABit fa-solid fa-user"></i>
-            </button>
-            <button id="filters">
-                <i class="searchButtonIcon fa-solid fa-bars"></i>
-            </button>
         </div>
-        <div>
-            <button id="fetch-random">
-                <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
+
+        <div id="similar-subreddits"></div>
+        <div id="fetch-buttons">
+    
         </div>
-        <div id="searchOptions">
-            <!-- <label for="isUser">Search Users</label>
-            <input type="checkbox" id="isUser" title="Is User?" /> -->
-
-            <label for="autoscroll">Autoscroll</label>
-            <input type="checkbox" id="autoscroll" title="Auto-scroll?" />
-
-            <label for="nsfw" id="nsfw-label">NSFW</label>
-            <input type="checkbox" id="nsfw" title="NSFW?" />
-
-            <dialog id="filtersmodal">
-                <div>
-                    <textarea id="subredditFilter" cols="30" rows="10" placeholder="Subreddits to blocklist..."></textarea>
-                    <textarea id="subredditContentFilter" cols="30" rows="10" placeholder="Words in subs to blocklist..."></textarea>
-                </div>
-                <div>
-                    <button autofocus id="filtersmodalclose">Back</button>
-                </div>
-            </dialog>
-
-            <!-- button for saved -->
-            <button id="saved">
-                Open Saved <i class="searchButtonIcon fa-solid fa-bookmark"></i>
-            </button>
-
-
-        </div>
-        
-    </div>
-    <div id="similar-subreddits"></div>
-    <div id="fetch-buttons">
-
     </div>
 </body>
 

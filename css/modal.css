@@ -1,0 +1,41 @@
+#filtersmodal {
+    border-radius: 5px;
+}
+
+#filtersmodal::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all 250ms;
+}
+
+.filters-textarea {
+    resize: none;
+}
+
+.filters-textarea:disabled::placeholder {
+    /* text color */
+    color: #c4c4c4;
+}
+
+.modal-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: larger;
+    text-align: center;
+}
+
+.filters {
+    display: flex;
+    flex-direction: row;
+}
+
+.filter-section {
+    display: flex;
+    flex-direction: column;
+    margin: 2.5px;
+}
+
+.filters-checkbox {
+    position: relative;
+    bottom: 20px;
+    right: 46%;
+}

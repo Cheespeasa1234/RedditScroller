@@ -1,30 +1,41 @@
 body {
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 20px;
+    background: #2f2f2f;
+}
+
+#page-wrap {
     height: 100vh;
+    width: 96vw;
+    padding: 10px;
     display: grid;
     grid-template-rows: 5% 8% 0% 85%;
     overflow: hidden;
     position: fixed;
-    background: #131313;
+    background: #4c4c4c;
     color: white;
     font-family: sans-serif;
-    padding: 20px;
+    border-radius: 5px;
+    /* Add padding here */
+    /* Include border and padding in element's total width and height */
 }
 
 @media screen and (max-width: 530px) {
-    body {
+    #page-wrap {
         grid-template-rows: 7% 8% 0% 85%;
     }
+
     #searchBoxSpan {
         display: flex !important;
     }
-  }
+}
 
 #input {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    max-width: 95%;
 }
 
 #fetch-random {
@@ -87,6 +98,7 @@ img:not(.fullscreen-image):not(.fullscreen-gif img):hover {
     border-radius: 0px;
     transform: scale(1.2);
 }
+
 /* img:active {
     border-radius: 0px;
     transform: scale(5);
@@ -105,7 +117,9 @@ input {
     height: auto;
 }
 
-#fetch, #fetch-user, #filters {
+#fetch,
+#fetch-user,
+#filters {
     cursor: pointer;
     transition: 250ms;
     width: 30px;
@@ -116,7 +130,9 @@ input {
     border: none;
 }
 
-#fetch:hover, #fetch-user:hover, #filters:hover {
+#fetch:hover,
+#fetch-user:hover,
+#filters:hover {
     transform: scale(110%, 110%);
 }
 
@@ -125,29 +141,24 @@ input {
     margin: 0;
 }
 
-#filtersmodal {
-    border-radius: 5px;
-}
 
-#filtersmodal::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
-}
 
 .post {
     margin: 10px;
     padding: 10px;
     border: solid 2px black;
 }
+
 .similarsub {
     margin-right: 10px;
 }
 
 .upABit {
-    transform: translate(10px,-10px) scale(50%, 50%);
+    transform: translate(10px, -10px) scale(50%, 50%);
 }
 
 .downATinyBit {
-    transform: translate(0px,2px);
+    transform: translate(0px, 2px);
 }
 
 .nsfw {
@@ -158,9 +169,9 @@ input {
 .object-and-details {
     display: inline-block;
     position: relative;
-  }
-  
-  summary {
+}
+
+summary {
     color: #fff;
     background: #000;
     width: 2rem;
@@ -175,24 +186,25 @@ input {
     background-repeat: no-repeat;
     background-position: center;
     background-color: white;
-  }
-  
-  [open] summary {
+}
+
+[open] summary {
     background-image: url("https://assets.codepen.io/128034/pause_circle_filled-24px.svg");
     box-shadow: 0 0 0 2px #fff;
     background-color: white;
-  }
-  
-  /* for blink/webkit */
-  details summary::-webkit-details-marker {
+}
+
+/* for blink/webkit */
+details summary::-webkit-details-marker {
     display: none;
-  }
-  /* for firefox */
-  details > summary:first-of-type {
+}
+
+/* for firefox */
+details>summary:first-of-type {
     list-style: none;
-  }
-  
-  summary + * {
+}
+
+summary+* {
     position: absolute;
     top: 0;
     left: 0;
@@ -203,23 +215,24 @@ input {
     background: #000;
     color: #fff;
     overflow-y: auto;
-  }
-  
-  summary + * a {
+}
+
+summary+* a {
     color: #fff;
-  }
-  summary:focus {
+}
+
+summary:focus {
     box-shadow: 0 0 0 0.25rem #aade87;
     outline: transparent;
-  }
-  
-  .object-and-details1 img {
+}
+
+.object-and-details1 img {
     display: inline-block;
     position: absolute;
     top: 0px;
     left: 0px;
     overflow: visible;
-  }
+}
 
 .fullscreen-image {
     position: fixed;
@@ -230,7 +243,7 @@ input {
     /* set the width and height keeping the aspect ratio of the image */
     width: auto;
     height: 100vh;
-    
+
     z-index: 10000;
 }
 
@@ -253,7 +266,7 @@ input {
     width: 100%;
     height: 100%;
 
-    
+
 }
 
 .blur {

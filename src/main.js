@@ -5,8 +5,10 @@ const subredditElement = document.querySelector("#subreddit");
 const fetcher = document.querySelector("#fetch");
 const randfetcher = document.querySelector("#fetch-random");
 const userfetcher = document.querySelector("#fetch-user");
-const filtersInputElement = document.querySelector("#subredditFilter");
-const containsFiltersInputElement = document.querySelector("#subredditContentFilter");
+const filtersInputElement = document.querySelector("#subreddit-filter");
+const containsFiltersInputElement = document.querySelector("#subreddit-content-filter");
+const filtersInputEnableCheckbox = document.querySelector("#subreddit-filter-checkbox");
+const containsFiltersInputEnableCheckbox = document.querySelector("#subreddit-content-filter-checkbox");
 const nsfwCheckboxCheckbox = document.querySelector("#nsfw");
 const nsfwCheckboxLabel = document.querySelector("#nsfw-label");
 const savedElement = document.querySelector("#saved");
@@ -43,6 +45,13 @@ randfetcher.addEventListener("click", () => {
 setInterval(() => {
     if (autoscroll) pageScroll();
 }, scrollDelay);
+
+filtersInputEnableCheckbox.addEventListener("click", () => {
+    filtersInputElement.disabled = !filtersInputElement.disabled;
+});
+containsFiltersInputEnableCheckbox.addEventListener("click", () => {
+    containsFiltersInputElement.disabled = !containsFiltersInputElement.disabled;
+});
 
 autoscrollElement.addEventListener("click", () => {
     autoscroll = !autoscroll;
